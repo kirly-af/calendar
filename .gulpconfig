@@ -1,0 +1,24 @@
+paths:
+  src: 'app'
+  dst: 'www'
+  jspm: 'jspm_packages'
+  scripts:
+    main: 'app/app.js'
+    all: 'app/**/*.js'
+  styles:
+    main: 'app/app.scss'
+    all: 'app/**/*.scss'
+  templates:
+    main: 'app/**/!(_)*.pug'
+    all: 'app/**/*.pug'
+  assets:
+    app: [
+      'node_modules/angular/angular.js'
+      'node_modules/@angular/router/angular1/angular_1_router.js'
+      'app/assets/**'
+    ]
+    vendor:
+      dst: 'assets/vendor'
+      src: [
+        'jspm:font-awesome/fonts/**'
+      ]

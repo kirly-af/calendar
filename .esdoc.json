@@ -1,0 +1,5 @@
+{
+  "source": "./app",
+  "includes": ["\\.(js)$"],
+  "destination": "./docs/js"
+}

@@ -1,0 +1,6 @@
+# Debug.
+npm-debug.log
+
+# External libraries.
+node_modules/
+jspm_packages/
