@@ -17,13 +17,18 @@ System.config({
   map: {
     "angular": "github:angular/bower-angular@1.5.5",
     "angular-ui-calendar": "github:angular-ui/ui-calendar@1.0.1",
+    "angular-ui-router": "github:angular-ui/ui-router@0.2.18",
     "babel": "npm:babel-core@5.8.38",
     "babel-runtime": "npm:babel-runtime@5.8.38",
+    "bootstrap": "github:twbs/bootstrap@3.3.6",
     "core-js": "npm:core-js@1.2.6",
     "font-awesome": "npm:font-awesome@4.6.1",
     "fullcalendar": "npm:fullcalendar@2.7.0-beta",
     "jquery": "npm:jquery@2.2.3",
     "moment": "npm:moment@2.13.0",
+    "github:angular-ui/ui-router@0.2.18": {
+      "angular": "github:angular/bower-angular@1.5.5"
+    },
     "github:jspm/nodelibs-assert@0.1.0": {
       "assert": "npm:assert@1.3.0"
     },
@@ -35,6 +40,9 @@ System.config({
     },
     "github:jspm/nodelibs-util@0.1.0": {
       "util": "npm:util@0.10.3"
+    },
+    "github:twbs/bootstrap@3.3.6": {
+      "jquery": "npm:jquery@2.2.3"
     },
     "npm:assert@1.3.0": {
       "util": "npm:util@0.10.3"

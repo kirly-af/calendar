@@ -1,6 +1,31 @@
+$fa-font-path: jspm_resolve("font-awesome/fonts/");
+@import "jspm:font-awesome/scss/font-awesome";
+@import "jspm:bootstrap/css/bootstrap";
 @import "jspm:fullcalendar/dist/fullcalendar";
 
 body
 {
   background-color: #fff;
+}
+
+#header, #content
+{
+  padding: 20px;
+}
+
+#header
+{
+  background-color: #375684;
+  color: #fff;
+  padding: 20px;
+
+  h1, #eventAdd
+  {
+    display: inline;
+  }
+
+  #eventAdd
+  {
+    float: right;
+  }
 }

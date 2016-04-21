@@ -1,0 +1,8 @@
+.container-fluid
+  .row#header
+    h1 CA485 - Assignment
+    button.btn.btn-success#eventAdd(ng-click="vm.showAddEventDialog()")
+      i.fa.fa-calendar-plus-o(aria-hidden="true")
+      span #{' '}Add event to the calendar
+  .row#content
+    calendar
