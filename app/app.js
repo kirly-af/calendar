@@ -5,12 +5,13 @@ import 'angular-route';
 
 import routesConfig from 'core/routes';
 import calendar from 'components/calendar';
+import eventCreate from 'components/event-create';
 
 const dependencies = [
   'ngRoute',
 
-  // Routes.name,
-  calendar.name
+  calendar.name,
+  eventCreate.name
 ];
 
 angular.module('app', dependencies)
@@ -20,7 +21,7 @@ angular.module('app', dependencies)
 /* @ngInject */
 function config($locationProvider)
 {
-  $locationProvider.html5Mode(false);
+  $locationProvider.html5Mode(true);
 }
 
 angular.element(document).ready(function()

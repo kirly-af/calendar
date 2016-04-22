@@ -33,7 +33,7 @@ class CalendarController
   {
     console.log(param);
   }
-};
+}
 
 export default angular.module('calendar', ['ui.calendar'])
   .component('calendar', {
