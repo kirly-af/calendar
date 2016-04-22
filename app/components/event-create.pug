@@ -1,7 +1,7 @@
 h2 Create new event
 .row
   .col-xs-10.col-lg-4
-    form(role="form")
+    form(name="vm.form" role="form")
       .form-group
         label(for="name") Name:
         input#name.form-control(type="text" required ng-model="vm.name")
@@ -19,10 +19,14 @@ h2 Create new event
             i.fa.fa-calendar(aria-hidden="true")
       .form-group
         label(for="slots") Number of slots:
-        input#slots.form-control(type="number" required ng-model="vm.slots")
+        input#slots.form-control(
+          type="number" min="0" required ng-model="vm.slots"
+        )
       .form-group
         label(for="slots") Duration (minutes):
-        input#slots.form-control(type="number" required ng-model="vm.duration")
+        input#slots.form-control(
+          type="number" min="0" required ng-model="vm.duration"
+        )
       button.btn.btn-primary(type="submit") Create
       a.btn.btn-default(href="#/calendar")
         span #{' '} Back

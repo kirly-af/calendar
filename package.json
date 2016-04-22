@@ -114,7 +114,9 @@
       "font-awesome": "npm:font-awesome@^4.6.1",
       "fullcalendar": "npm:fullcalendar@^2.7.0-beta",
       "jquery": "npm:jquery@^2.2.3",
-      "moment": "npm:moment@^2.13.0"
+      "lodash": "npm:lodash@^4.11.1",
+      "moment": "npm:moment@^2.13.0",
+      "restangular": "github:mgonto/restangular@^1.5.2"
     },
     "devDependencies": {
       "babel": "npm:babel-core@^5.8.24",
