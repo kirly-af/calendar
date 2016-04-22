@@ -7,6 +7,11 @@ class EventCreateController
   constructor()
   {
   }
+
+  createEvent()
+  {
+    console.log('creating event');
+  }
 }
 
 export default angular.module('event-create', [])

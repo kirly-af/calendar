@@ -1,7 +1,7 @@
 h2 Create new event
 .row
   .col-xs-10.col-lg-4
-    form(name="vm.form" role="form")
+    form(name="vm.form" role="form" ng-submit="vm.createEvent()")
       .form-group
         label(for="name") Name:
         input#name.form-control(type="text" required ng-model="vm.name")
@@ -28,5 +28,4 @@ h2 Create new event
           type="number" min="0" required ng-model="vm.duration"
         )
       button.btn.btn-primary(type="submit") Create
-      a.btn.btn-default(href="#/calendar")
-        span #{' '} Back
+      button.btn.btn-default(href="#/calendar") Back
