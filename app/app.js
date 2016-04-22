@@ -5,9 +5,9 @@ import 'angular-route';
 import 'lodash';
 import 'restangular';
 
-import routesConfig from 'core/routes';
-import calendar from 'components/calendar';
-import eventCreate from 'components/event-create';
+import routesConfig from './core/routes';
+import calendar from './components/calendar';
+import eventCreate from './components/event-create';
 
 const dependencies = [
   'ngRoute',
@@ -21,9 +21,10 @@ angular.module('app', dependencies)
   .config(routesConfig)
   .component('app', {templateUrl: 'core/layout.html'});
 
-/* @ngInject */
 function config($locationProvider)
 {
+  'ngInject';
+
   $locationProvider.html5Mode(true);
 }
 

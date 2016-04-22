@@ -2,14 +2,11 @@ import 'moment';
 import 'fullcalendar';
 import 'angular-ui-calendar';
 
-let calendarConfig =
-{
-  calendar:
-  {
+let calendarConfig = {
+  calendar: {
     height: 450,
     editable: true,
-    header:
-    {
+    header: {
       left: 'month basicWeek basicDay agendaWeek agendaDay',
       center: 'title',
       right: 'today prev,next'
@@ -19,9 +16,10 @@ let calendarConfig =
 
 class CalendarController
 {
-  /* @ngInject */
   constructor()
   {
+    'ngInject';
+
     this.eventSources = [];
     calendarConfig.calendar.dayClick = (ev) => this.showAddEventDialog(ev);
     // eventDrop: $scope.alertOnDrop,

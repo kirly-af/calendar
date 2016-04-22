@@ -1,11 +1,10 @@
 import 'bootstrap-datepicker/js/bootstrap-datepicker';
-$('.datepicker').datepicker();
 
 class EventCreateController
 {
-  /* @ngInject */
   constructor()
   {
+    'ngInject';
   }
 
   createEvent()
@@ -19,4 +18,5 @@ export default angular.module('event-create', [])
     templateUrl: 'components/event-create.html',
     controller: EventCreateController,
     controllerAs: 'vm'
-  });
+  })
+  .run(() => angular.element('.datepicker').datepicker());

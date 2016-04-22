@@ -126,6 +126,9 @@
   },
   "dependencies": {
     "@angular/router": "^0.2.0",
-    "angular": "^1.5.5"
+    "angular": "^1.5.5",
+    "aws-sdk": "^2.3.5",
+    "body-parser": "^1.15.0",
+    "express": "^4.13.4"
   }
 }
