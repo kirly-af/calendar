@@ -16,8 +16,8 @@ System.config({
 
   map: {
     "angular": "github:angular/bower-angular@1.5.5",
+    "angular-route": "github:angular/bower-angular-route@1.5.5",
     "angular-ui-calendar": "github:angular-ui/ui-calendar@1.0.1",
-    "angular-ui-router": "github:angular-ui/ui-router@0.2.18",
     "babel": "npm:babel-core@5.8.38",
     "babel-runtime": "npm:babel-runtime@5.8.38",
     "bootstrap": "github:twbs/bootstrap@3.3.6",
@@ -26,7 +26,7 @@ System.config({
     "fullcalendar": "npm:fullcalendar@2.7.0-beta",
     "jquery": "npm:jquery@2.2.3",
     "moment": "npm:moment@2.13.0",
-    "github:angular-ui/ui-router@0.2.18": {
+    "github:angular/bower-angular-route@1.5.5": {
       "angular": "github:angular/bower-angular@1.5.5"
     },
     "github:jspm/nodelibs-assert@0.1.0": {

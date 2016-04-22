@@ -1,26 +1,26 @@
 import 'jquery';
 import 'bootstrap';
 import 'angular';
-import 'angular-ui-router';
+import 'angular-route';
 
-// import 'core/routes';
-import Routes from 'core/routes';
-import Calendar from 'components/calendar';
+import routesConfig from 'core/routes';
+import calendar from 'components/calendar';
 
 const dependencies = [
-  'ui.router',
+  'ngRoute',
 
-  Routes.name,
-  Calendar.name
+  // Routes.name,
+  calendar.name
 ];
+
 angular.module('app', dependencies)
-  .config(config)
+  .config(routesConfig)
   .component('app', {templateUrl: 'core/layout.html'});
 
 /* @ngInject */
 function config($locationProvider)
 {
-  $locationProvider.html5Mode(true);
+  $locationProvider.html5Mode(false);
 }
 
 angular.element(document).ready(function()

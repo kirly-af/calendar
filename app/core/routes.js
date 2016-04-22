@@ -1,15 +1,10 @@
 /* @ngInject */
-let routesConfig = function($stateProvider, $urlRouterProvider)
+export default function($routeProvider)
 {
-  let createRoute = (name) => $stateProvider.state({
-    name,
-    url: `/${name}`,
-    template: `<${name}></${name}>`
-  });
+  let template = (component) => `<${component}></${component}>`;
 
-  $urlRouterProvider.otherwise('/calendar');
-  createRoute('calendar');
+  $routeProvider
+    .otherwise('/calendar')
+    .when('/calendar', {template: template('calendar')})
+    .when('/eventCreate', {template: template('event-create')});
 };
-
-export default angular.module('app.routes', [])
-  .config(routesConfig);
