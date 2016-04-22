@@ -110,6 +110,7 @@
       "angular-route": "github:angular/bower-angular-route@^1.5.5",
       "angular-ui-calendar": "github:angular-ui/ui-calendar@^1.0.1",
       "bootstrap": "github:twbs/bootstrap@^3.3.6",
+      "bootstrap-datepicker": "github:eternicode/bootstrap-datepicker@^1.6.0",
       "font-awesome": "npm:font-awesome@^4.6.1",
       "fullcalendar": "npm:fullcalendar@^2.7.0-beta",
       "jquery": "npm:jquery@^2.2.3",

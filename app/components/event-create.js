@@ -1,3 +1,6 @@
+import 'bootstrap-datepicker/js/bootstrap-datepicker';
+$('.datepicker').datepicker();
+
 class EventCreateController
 {
   /* @ngInject */

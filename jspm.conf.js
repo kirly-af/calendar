@@ -21,6 +21,7 @@ System.config({
     "babel": "npm:babel-core@5.8.38",
     "babel-runtime": "npm:babel-runtime@5.8.38",
     "bootstrap": "github:twbs/bootstrap@3.3.6",
+    "bootstrap-datepicker": "github:eternicode/bootstrap-datepicker@1.6.0",
     "core-js": "npm:core-js@1.2.6",
     "font-awesome": "npm:font-awesome@4.6.1",
     "fullcalendar": "npm:fullcalendar@2.7.0-beta",

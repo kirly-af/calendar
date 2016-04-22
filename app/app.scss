@@ -2,6 +2,9 @@ $fa-font-path: jspm_resolve("font-awesome/fonts/");
 @import "jspm:font-awesome/scss/font-awesome";
 @import "jspm:bootstrap/css/bootstrap";
 @import "jspm:fullcalendar/dist/fullcalendar";
+@import "jspm:bootstrap-datepicker/css/bootstrap-datepicker3.standalone";
+
+$color-primary: #375684;
 
 body
 {
@@ -15,7 +18,7 @@ body
 
 #header
 {
-  background-color: #375684;
+  background-color: $color-primary;
   color: #fff;
   padding: 20px;
 
@@ -27,5 +30,18 @@ body
   #eventAdd
   {
     float: right;
+  }
+}
+
+#content
+{
+  h2
+  {
+    color: $color-primary;
+  }
+
+  .btn
+  {
+    margin: 10px;
   }
 }
