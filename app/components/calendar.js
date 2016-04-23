@@ -15,15 +15,20 @@ let calendarConfig = {
 
 class CalendarController
 {
-  constructor()
+  constructor(API)
   {
     'ngInject';
 
-    this.events = [event];
-    this.eventSources = window.events.map(this.eventToSlots);
-    calendarConfig.calendar.eventClick = (ev) => this.eventDetails(ev.id);
-    // eventDrop: $scope.alertOnDrop,
-    // eventResize: $scope.alertOnResize
+    this.api = API;
+    this.eventSources = [];
+    this.api.getAllEvents().then((events) => {
+      for (let ev of events)
+      {
+        this.eventSources.push(this.eventToSlots(ev));
+      }
+    });
+
+    calendarConfig.calendar.eventClick = (ev) => this.eventDetails(ev.title);
     this.uiConfig = calendarConfig;
   }
 
@@ -56,9 +61,9 @@ class CalendarController
     return slots;
   }
 
-  eventDetails(id)
+  eventDetails(title)
   {
-    console.log(id);
+    window.location = '#/event-details';
   }
 }
 

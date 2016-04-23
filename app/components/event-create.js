@@ -1,35 +1,13 @@
 import 'angular-bootstrap-datetimepicker';
 import 'angular-bootstrap-datetimepicker/src/js/datetimepicker.templates.js';
 
-// NOTE: MOCK
-window.events = [
-  {
-    id: 1,
-    title: 'Event 1',
-    description: 'This is event 1',
-    start: '23/04/2016',
-    end: '23/04/2016',
-    time: '12:00 PM',
-    duration: 15,
-    slots: 10
-  },
-  {
-    id: 2,
-    title: 'Event 2',
-    description: 'This is event 2',
-    start: '21/04/2016',
-    end: '22/04/2016',
-    time: '10:00 AM',
-    duration: 30,
-    slots: 10
-  }
-];
-
 class EventCreateController
 {
-  constructor()
+  constructor(API)
   {
     'ngInject';
+
+    this.api = API;
   }
 
   createEvent()
@@ -49,8 +27,8 @@ class EventCreateController
       this.dateInvalid = true;
     else
     {
-      window.events.push(event);
-      window.location.href = '#/calendar';
+      this.api.createEvent(event);
+      window.location = '#/calendar';
     }
   }
 }

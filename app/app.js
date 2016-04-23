@@ -3,16 +3,16 @@ import 'bootstrap';
 import 'angular';
 import 'angular-route';
 import 'lodash';
-import 'restangular';
 
 import routesConfig from './core/routes';
+import API from './core/api';
 import calendar from './components/calendar';
 import eventCreate from './components/event-create';
 
 const dependencies = [
   'ngRoute',
-  'restangular',
 
+  API.name,
   calendar.name,
   eventCreate.name
 ];
