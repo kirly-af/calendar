@@ -20,7 +20,7 @@
     "test": "karma start",
     "test:watch": "karma start --no-single-run",
     "docs": "npm run sassdocs && npm run jsdocs",
-    "start": "gulp --gulpfile Gulpfile.coffee",
+    "start": "gulp --gulpfile Gulpfile.coffee build --production && node server.js",
     "jsdocs": "esdoc -c .esdoc.json",
     "sassdocs": "sassdoc app/**/*.scss",
     "postinstall": "jspm install"
