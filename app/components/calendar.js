@@ -63,7 +63,7 @@ class CalendarController
 
   eventDetails(title)
   {
-    window.location = '#/event-details';
+    window.location = `#/event-details/${title}`;
   }
 }
 

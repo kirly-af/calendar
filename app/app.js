@@ -8,25 +8,20 @@ import routesConfig from './core/routes';
 import API from './core/api';
 import calendar from './components/calendar';
 import eventCreate from './components/event-create';
+import eventDetails from './components/event-details';
 
 const dependencies = [
   'ngRoute',
 
   API.name,
   calendar.name,
-  eventCreate.name
+  eventCreate.name,
+  eventDetails.name
 ];
 
 angular.module('app', dependencies)
   .config(routesConfig)
   .component('app', {templateUrl: 'core/layout.html'});
-
-function config($locationProvider)
-{
-  'ngInject';
-
-  $locationProvider.html5Mode(true);
-}
 
 angular.element(document).ready(function()
 {
