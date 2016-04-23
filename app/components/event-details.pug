@@ -1,0 +1,16 @@
+h2 Event information
+.panel.panel-default
+  .panel-heading
+    h3 {{vm.event.title}}
+  .panel-body
+    <i>{{ vm.event.description }}</i>
+
+  ul.list-group
+    li.list-group-item
+      | From the <b>{{vm.event.start}}</b>
+      | to the <b>{{vm.event.end}}</b>
+    li.list-group-item
+      | Starting at: <b>{{vm.event.time}}</b>
+    li.list-group-item
+      | {{vm.event.slots}} slots of {{vm.event.duration}} minutes
+a.btn.btn-default(href="#/calendar") Back
