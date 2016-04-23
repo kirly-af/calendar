@@ -10,7 +10,8 @@
   "globals": {
     "document": true,
     "window": true,
-    "angular": true
+    "angular": true,
+    "moment": true
   },
 
   "rules": {

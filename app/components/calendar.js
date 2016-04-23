@@ -1,4 +1,3 @@
-// import 'moment';
 import 'fullcalendar';
 import 'angular-ui-calendar';
 

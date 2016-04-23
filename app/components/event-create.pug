@@ -3,48 +3,47 @@ h2 Create new event
   .col-xs-10.col-lg-4
     form(name="vm.form" role="form" ng-submit="vm.createEvent()")
       .form-group
-        label(for="name") Title:
-        input#name.form-control(type="text" required ng-model="vm.name")
+        label(for="title") Title:
+        input#title.form-control(type="text" required ng-model="vm.title")
       .form-group
         label(for="description") Description:
         input#description.form-control(type="text" required ng-model="vm.description")
       .form-group
-        label(for="time") Start time:
-        .input-group.date.timepicker
-          input#time.form-control(type='text' required ng-model="vm.time")
-          span.input-group-addon
-            span.glyphicon.glyphicon-time
+        .dropdown
+          a.dropdown-toggle#start-dropdown(role="button" data-toggle="dropdown" data-target="#" href="#")
+            label Start date:
+          span #{' '}{{ vm.start | date:'dd/MM/yyyy' }}
+          ul.dropdown-menu(role="menu" aria-labelledby="dLabel")
+            datetimepicker(
+              ng-model="vm.start"
+              datetimepicker-config="{ dropdownSelector: '#start-dropdown', startView:'day', minView:'minute' }"
+            )
       .form-group
-        label(for="start") Start date:
-        .input-group.date.datepicker
-          input#start.form-control(type='text' required ng-model="vm.start")
-          span.input-group-addon
-            span.glyphicon.glyphicon-calendar
-      .form-group
-        label(for="end") End date:
-        .input-group.date.datepicker
-          input#end.form-control(type='text' required ng-model="vm.end")
-          span.input-group-addon
-            span.glyphicon.glyphicon-calendar
-      script.
-        $(function () {
-          $('.datetimepicker').datetimepicker();
-          $('.timepicker').datetimepicker({
-            format: 'LT'
-          });
-          $('.datepicker').datetimepicker({
-            format: 'DD/MM/YYYY'
-          });
-        });
+        .dropdown
+          a.dropdown-toggle#end-dropdown(role="button" data-toggle="dropdown" data-target="#" href="#")
+            label End date:
+          span #{' '}{{ vm.end | date:'dd/MM/yyyy' }}
+          ul.dropdown-menu(role="menu" aria-labelledby="dLabel")
+            datetimepicker(
+              ng-model="vm.end"
+              datetimepicker-config="{ dropdownSelector: '#end-dropdown', startView:'day', minView:'day' }"
+            )
+      .alert.alert-danger(role="alert" ng-if="vm.dateInvalid")
+        span.glyphicon.glyphicon-exclamation-sign(aria-hidden="true")
+        span.sr-only Error:
+        span #{' '}End date should be after start date.
+      .form-group(ng-if="vm.start")
+        label Start hour:
+        span #{' '}{{ vm.start | date:'shortTime'}}
       .form-group
         label(for="slots") Number of slots:
         input#slots.form-control(
-          type="number" min="0" required ng-model="vm.slots"
+          type="number" min="1" required ng-model="vm.slots"
         )
       .form-group
         label(for="slots") Duration (minutes):
         input#slots.form-control(
-          type="number" min="0" required ng-model="vm.duration"
+          type="number" min="1" required ng-model="vm.duration"
         )
       button.btn.btn-primary(type="submit") Create
       a.btn.btn-default(href="#/calendar") Back
