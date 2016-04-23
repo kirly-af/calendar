@@ -13,7 +13,6 @@ class EventCreateController
   createEvent()
   {
     let event = {
-      id: window.events.slice(-1)[0].id + 1,
       title: this.title,
       description: this.description,
       start: moment(this.start).format('DD/MM/YYYY'),
