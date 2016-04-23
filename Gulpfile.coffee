@@ -95,7 +95,6 @@ gulp.task 'templates', ->
     .pipe plug.if(PROD, plug.size title: 'templates')
     .pipe gulp.dest PATHS.dst
 
-
 resolveJspmAssets = (assetPath) ->
   return assetPath if assetPath.search('jspm:') isnt 0
   tmp = assetPath.split('jspm:')[1].split('/')

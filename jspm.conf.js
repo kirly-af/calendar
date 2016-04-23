@@ -21,13 +21,13 @@ System.config({
     "babel": "npm:babel-core@5.8.38",
     "babel-runtime": "npm:babel-runtime@5.8.38",
     "bootstrap": "github:twbs/bootstrap@3.3.6",
-    "bootstrap-datepicker": "github:eternicode/bootstrap-datepicker@1.6.0",
+    "bootstrap-datetimepicker": "github:Eonasdan/bootstrap-datetimepicker@4.17.37",
     "core-js": "npm:core-js@1.2.6",
     "font-awesome": "npm:font-awesome@4.6.1",
     "fullcalendar": "npm:fullcalendar@2.7.0-beta",
     "jquery": "npm:jquery@2.2.3",
     "lodash": "npm:lodash@4.11.1",
-    "moment": "npm:moment@2.13.0",
+    "moment": "github:moment/moment@2.13.0",
     "restangular": "github:mgonto/restangular@1.5.2",
     "github:angular/bower-angular-route@1.5.5": {
       "angular": "github:angular/bower-angular@1.5.5"

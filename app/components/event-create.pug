@@ -3,20 +3,39 @@ h2 Create new event
   .col-xs-10.col-lg-4
     form(name="vm.form" role="form" ng-submit="vm.createEvent()")
       .form-group
-        label(for="name") Name:
+        label(for="name") Title:
         input#name.form-control(type="text" required ng-model="vm.name")
       .form-group
+        label(for="description") Description:
+        input#description.form-control(type="text" required ng-model="vm.description")
+      .form-group
+        label(for="time") Start time:
+        .input-group.date.timepicker
+          input#time.form-control(type='text' required ng-model="vm.time")
+          span.input-group-addon
+            span.glyphicon.glyphicon-time
+      .form-group
         label(for="start") Start date:
-        .input-group.date(data-provide="datepicker")
-          input#date.form-control(type="text" required ng-model="vm.start")
-          .input-group-addon
-            i.fa.fa-calendar(aria-hidden="true")
+        .input-group.date.datepicker
+          input#start.form-control(type='text' required ng-model="vm.start")
+          span.input-group-addon
+            span.glyphicon.glyphicon-calendar
       .form-group
         label(for="end") End date:
-        .input-group.date(data-provide="datepicker")
-          input#end.form-control(type="text" required ng-model="vm.end")
-          .input-group-addon
-            i.fa.fa-calendar(aria-hidden="true")
+        .input-group.date.datepicker
+          input#end.form-control(type='text' required ng-model="vm.end")
+          span.input-group-addon
+            span.glyphicon.glyphicon-calendar
+      script.
+        $(function () {
+          $('.datetimepicker').datetimepicker();
+          $('.timepicker').datetimepicker({
+            format: 'LT'
+          });
+          $('.datepicker').datetimepicker({
+            format: 'DD/MM/YYYY'
+          });
+        });
       .form-group
         label(for="slots") Number of slots:
         input#slots.form-control(
