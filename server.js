@@ -29,15 +29,29 @@ router.route('/events')
     }
 
     dynamoClient.put(params, (err, data) => {
-      if (err) res.status(500).json({message: 'error in database'})
-      else     res.status(200).json({message: 'success'})
+      if (err)
+      {
+        res.status(500).json({message: 'error in database'})
+        console.log('db error:', err)
+      }
+      else
+      {
+        res.status(200).json({message: 'success'})
+      }
     })
   })
   .get((req, res) => {
     let params = {TableName: 'Events'}
     dynamoClient.scan(params, (err, data) => {
-      if (err) res.status(500).json({message: 'error in database'})
-      else     res.status(200).json(data)
+      if (err)
+      {
+        res.status(500).json({message: 'error in database'})
+        console.log('db error:', err)
+      }
+      else
+      {
+        res.status(200).json(data)
+      }
     })
   })
 
@@ -50,8 +64,15 @@ router.route('/events/:title')
       }
     }
     dynamoClient.get(params, (err, data) => {
-      if (err) res.status(400).json({message: 'event not found'})
-      else     res.status(200).json(data)
+      if (err)
+      {
+        res.status(400).json({message: 'event not found'})
+        console.log('db error:', err)
+      }
+      else
+      {
+        res.status(200).json(data)
+      }
     });
   })
 
