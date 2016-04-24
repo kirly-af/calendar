@@ -4,3 +4,4 @@ npm-debug.log
 # External libraries.
 node_modules/
 jspm_packages/
+shared-local-instance.db
