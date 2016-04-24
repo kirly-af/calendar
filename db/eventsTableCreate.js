@@ -10,10 +10,10 @@ var dynamodb = new AWS.DynamoDB();
 var params = {
     TableName : "Events",
     KeySchema: [
-        { AttributeName: "title", KeyType: "HASH" }
+        { AttributeName: "key", KeyType: "HASH" }
     ],
     AttributeDefinitions: [
-        { AttributeName: "title", AttributeType: "S" }
+        { AttributeName: "key", AttributeType: "S" }
     ],
     ProvisionedThroughput: {
         ReadCapacityUnits: 1,

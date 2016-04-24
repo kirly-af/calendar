@@ -55,12 +55,12 @@ router.route('/events')
     })
   })
 
-router.route('/events/:title')
+router.route('/events/:key')
   .get((req, res) => {
     let params = {
       TableName: 'Events',
       Key: {
-        title: req.params.title
+        key: req.params.key
       }
     }
     dynamoClient.get(params, (err, data) => {
