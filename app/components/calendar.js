@@ -21,48 +21,48 @@ class CalendarController
 
     this.api = API;
     this.eventSources = [];
-    this.api.getAllEvents().then((events) =>
-    {
-      for (let ev of events)
-        this.eventSources.push(this.eventToSlots(ev));
-    });
+    this.createEntries()
+      .then((eventSource) => this.eventSources.push(eventSource));
 
-    calendarConfig.calendar.eventClick = (ev) => this.eventDetails(ev.title);
+    // this.mock();
+
+    calendarConfig.calendar.eventClick = (ev) => this.eventDetails(ev.id);
     this.uiConfig = calendarConfig;
   }
 
-  eventToSlots(event)
+  createEntries()
   {
-    let slots = [];
-    let duration = moment.duration(event.duration, 'minutes');
-    let startTime = null;
-    let endTime = moment(event.end + ' ' + event.time, 'DD/MM/YYYY LT');
-    endTime.add(moment.duration(event.duration * event.slots, 'minutes'));
-
-    for (let nbDay = 0; !endTime.isSame(startTime); ++nbDay)
+    return this.api.getAllEvents().then((events) =>
     {
-      if (nbDay > 10)
-        break;
-      startTime = moment(event.start + ' ' + event.time, 'DD/MM/YYYY LT');
-      startTime.add(moment.duration(nbDay, 'days'));
-      for (let i = 0; i < event.slots; ++i)
+      let eventSource = [];
+      for (let item of events)
       {
-        if (i > 20)
-          break;
-        slots.push({
-          id: event.id,
-          title: event.title,
-          start: new Date(startTime.toDate()),
-          end: new Date(startTime.add(duration).toDate())
-        });
+        let start = moment(item.date, 'DD/MM/YYYY HH:mm A');
+        let end = moment(start).add(moment.duration(item.duration, 'minutes'));
+        let slot = {
+          id: item.key,
+          title: `${item.name} - ${item.event.title}`,
+          start: start.toDate(),
+          end: end.toDate()
+        };
+        eventSource.push(slot);
       }
-    }
-    return slots;
+      return eventSource;
+    });
   }
 
-  eventDetails(title)
+  eventDetails(id)
   {
-    window.location = `#/event-details/${title}`;
+    console.log('clicked');
+    window.location = `#/event-details/${id}`;
+  }
+
+  mock()
+  {
+    // let eventSource = [
+    //   {id: 'test', title: 'Test Event', start: new Date(), allDay: false}
+    // ];
+    // this.eventSources.push(eventSource);
   }
 }
 

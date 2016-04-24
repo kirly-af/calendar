@@ -12,33 +12,16 @@ class EventCreateController
     this.step = 1;
     this.slot = {};
 
-    // NOTE: MOCK
-    // this.title = 'test';
-    // this.description = 'decription';
-    //
-    // this.step = 2;
-    //
-    // this.duration = 10;
-    // this.datesList = [
-    //   {
-    //     id: 0,
-    //     date: '05/04/2016'
-    //   },
-    //   {
-    //     id: 1,
-    //     date: '06/04/2016'
-    //   },
-    //   {
-    //     id: 2,
-    //     date: '07/04/2016'
-    //   }
-    // ];
+    // this.mock();
   }
 
   createSlot()
   {
+    let date = this.slot.date.label + ' ';
+    date += moment(this.slot.time).format('HH:mm A');
+
     let event = {
-      title: `${this.title}/${this.slot.name}`,
+      key: `${this.title}/${this.slot.name}`,
       event: {
         title: this.title,
         description: this.description,
@@ -46,8 +29,7 @@ class EventCreateController
         end: this.end
       },
       name: this.slot.name,
-      date: this.slot.date,
-      time: moment(this.slot.time).format('HH:mm A'),
+      date,
       duration: Number(this.duration)
     };
     this.api.createEvent(event);
@@ -69,7 +51,7 @@ class EventCreateController
     {
       this.datesList.push({
         id: i,
-        date: date.format('DD/MM/YYYY')
+        label: date.format('DD/MM/YYYY')
       });
       date.add(1, 'days');
     }
@@ -92,6 +74,30 @@ class EventCreateController
   {
     this.error = false;
     this.step -= 1;
+  }
+
+  mock()
+  {
+    this.title = 'test';
+    this.description = 'decription';
+
+    this.step = 2;
+
+    this.duration = 10;
+    this.datesList = [
+      {
+        id: 0,
+        date: '05/04/2016'
+      },
+      {
+        id: 1,
+        date: '06/04/2016'
+      },
+      {
+        id: 2,
+        date: '07/04/2016'
+      }
+    ];
   }
 }
 

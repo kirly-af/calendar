@@ -6,7 +6,7 @@ form(ng-if="vm.step == 2" role="form" ng-submit="vm.createSlot()")
     label(for="date") Date:
     select#date.form-control(
       required ng-model="vm.slot.date"
-      ng-options="item.date for item in vm.datesList track by item.id"
+      ng-options="item.label for item in vm.datesList track by item.id"
     )
   .form-group
     label(for="time") Time:
