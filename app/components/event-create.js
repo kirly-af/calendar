@@ -21,7 +21,7 @@ class EventCreateController
     date += moment(this.slot.time).format('HH:mm A');
 
     let event = {
-      key: `${this.title}/${this.slot.name}`,
+      key: `${this.title}_${this.slot.name}`,
       event: {
         title: this.title,
         description: this.description,

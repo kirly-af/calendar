@@ -53,16 +53,15 @@ class CalendarController
 
   eventDetails(id)
   {
-    console.log('clicked');
     window.location = `#/event-details/${id}`;
   }
 
   mock()
   {
-    // let eventSource = [
-    //   {id: 'test', title: 'Test Event', start: new Date(), allDay: false}
-    // ];
-    // this.eventSources.push(eventSource);
+    let eventSource = [
+      {id: 'test', title: 'Test Event', start: new Date(), allDay: false}
+    ];
+    this.eventSources.push(eventSource);
   }
 }
 
