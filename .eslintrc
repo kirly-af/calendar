@@ -20,6 +20,7 @@
     "no-trailing-spaces": 1,
     "no-unused-vars": 1,
     "semi": [2, "always"],
+    "space-after-keywords": 0,
     "space-before-function-paren": [1, "never"]
   }
 }

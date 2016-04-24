@@ -21,11 +21,10 @@ class CalendarController
 
     this.api = API;
     this.eventSources = [];
-    this.api.getAllEvents().then((events) => {
+    this.api.getAllEvents().then((events) =>
+    {
       for (let ev of events)
-      {
         this.eventSources.push(this.eventToSlots(ev));
-      }
     });
 
     calendarConfig.calendar.eventClick = (ev) => this.eventDetails(ev.title);

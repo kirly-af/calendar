@@ -4,8 +4,10 @@ class EventDetailsController
   {
     'ngInject';
 
-    API.getEvent($routeParams.title)
-      .then((event) => {
+    this.api = API;
+    this.api.getEvent($routeParams.title)
+      .then((event) =>
+      {
         this.event = event;
       });
   }
