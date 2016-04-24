@@ -1,16 +1,18 @@
-h2 Event information
+h2 {{vm.slot.event.title}}
+h3
+  | From the {{vm.slot.event.start | date:'dd/MM/yyyy'}}
+  | to the {{vm.slot.event.end | date:'dd/MM/yyyy'}}
+.well
+ <i>{{ vm.slot.event.description }}</i>
+
 .panel.panel-default
   .panel-heading
-    h3 {{vm.event.title}}
+    h3 {{ vm.slot.name }}
   .panel-body
-    <i>{{ vm.event.description }}</i>
-
+    | {{ vm.start | date:'dd/MM/yyyy'}}
   ul.list-group
     li.list-group-item
-      | From the <b>{{vm.event.start}}</b>
-      | to the <b>{{vm.event.end}}</b>
-    li.list-group-item
-      | Starting at: <b>{{vm.event.time}}</b>
-    li.list-group-item
-      | {{vm.event.slots}} slots of {{vm.event.duration}} minutes
+      | From {{vm.start | date:'HH:mm'}}</b>
+      | to {{vm.end | date:'HH:mm'}}</b>
+      | ({{vm.slot.duration}} minutes)
 a.btn.btn-default(href="#/calendar") Back

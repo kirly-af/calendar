@@ -8,7 +8,11 @@ class EventDetailsController
     this.api.getEvent($routeParams.id)
       .then((event) =>
       {
-        this.event = event;
+        this.slot = event;
+        this.start = moment(this.slot.date, 'DD/MM/YYYY HH:mm A').toDate();
+        this.end = moment(this.start)
+          .add(moment.duration(this.slot.duration, 'minutes'))
+          .toDate();
       });
   }
 }
