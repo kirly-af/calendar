@@ -1,0 +1,36 @@
+form(ng-if="vm.step == 1" role="form" ng-submit="vm.generateDates()")
+  .form-group
+    label(for="title") Event title:
+    input#title.form-control(type="text" required ng-model="vm.title")
+  .form-group
+    label(for="description") Description:
+    textarea#description.form-control(
+      type="text" rows="5" required ng-model="vm.description"
+    )
+  .form-group
+    .well
+      label Start date:
+      span #{' '}{{ vm.start | date:'dd/MM/yyyy' }}
+      datetimepicker(
+        ng-model="vm.start"
+        datetimepicker-config="{startView:'day', minView:'day'}"
+      )
+  .form-group
+    .well
+      label End date:
+      span #{' '}{{ vm.end | date:'dd/MM/yyyy' }}
+      datetimepicker(
+        ng-model="vm.end"
+        datetimepicker-config="{startView:'day', minView:'day'}"
+      )
+  .alert.alert-danger(role="alert" ng-if="vm.error")
+    span.glyphicon.glyphicon-exclamation-sign(aria-hidden="true")
+    span.sr-only Error:
+    span #{' '}{{ vm.error }}
+  .form-group
+    label(for="duration") Duration of slots (minutes):
+    input#duration.form-control(
+      type="number" min="1" required ng-model="vm.duration"
+    )
+  button.btn.btn-primary(type="submit") Add slots
+  a.btn.btn-default(href="#/calendar") Back

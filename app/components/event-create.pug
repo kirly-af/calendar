@@ -1,49 +1,6 @@
 h2 Create new event
 .row
   .col-xs-10.col-lg-4
-    form(name="vm.form" role="form" ng-submit="vm.createEvent()")
-      .form-group
-        label(for="title") Title:
-        input#title.form-control(type="text" required ng-model="vm.title")
-      .form-group
-        label(for="description") Description:
-        input#description.form-control(type="text" required ng-model="vm.description")
-      .form-group
-        .dropdown
-          a.dropdown-toggle#start-dropdown(role="button" data-toggle="dropdown" data-target="#" href="#")
-            label Start date:
-          span #{' '}{{ vm.start | date:'dd/MM/yyyy' }}
-          ul.dropdown-menu(role="menu" aria-labelledby="dLabel")
-            datetimepicker(
-              ng-model="vm.start"
-              datetimepicker-config="{ dropdownSelector: '#start-dropdown', startView:'day', minView:'minute' }"
-            )
-      .form-group
-        .dropdown
-          a.dropdown-toggle#end-dropdown(role="button" data-toggle="dropdown" data-target="#" href="#")
-            label End date:
-          span #{' '}{{ vm.end | date:'dd/MM/yyyy' }}
-          ul.dropdown-menu(role="menu" aria-labelledby="dLabel")
-            datetimepicker(
-              ng-model="vm.end"
-              datetimepicker-config="{ dropdownSelector: '#end-dropdown', startView:'day', minView:'day' }"
-            )
-      .alert.alert-danger(role="alert" ng-if="vm.dateInvalid")
-        span.glyphicon.glyphicon-exclamation-sign(aria-hidden="true")
-        span.sr-only Error:
-        span #{' '}End date should be after start date.
-      .form-group(ng-if="vm.start")
-        label Start hour:
-        span #{' '}{{ vm.start | date:'shortTime'}}
-      .form-group
-        label(for="slots") Number of slots:
-        input#slots.form-control(
-          type="number" min="1" required ng-model="vm.slots"
-        )
-      .form-group
-        label(for="slots") Duration (minutes):
-        input#slots.form-control(
-          type="number" min="1" required ng-model="vm.duration"
-        )
-      button.btn.btn-primary(type="submit") Create
-      a.btn.btn-default(href="#/calendar") Back
+    include _event-create-step1
+    include _event-create-step2
+    include _event-create-step3

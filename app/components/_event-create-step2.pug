@@ -1,0 +1,16 @@
+form(ng-if="vm.step == 2" role="form" ng-submit="vm.createSlot()")
+  .form-group
+    label(for="name") Slot name:
+    input#name.form-control(type="text" required ng-model="vm.slot.name")
+  .form-group
+    label(for="date") Date:
+    select#date.form-control(
+      required ng-model="vm.slot.date"
+      ng-options="item.date for item in vm.datesList track by item.id"
+    )
+  .form-group
+    label(for="time") Time:
+    input#time.form-control(type="time" required ng-model="vm.slot.time")
+
+  button.btn.btn-primary(type="submit") Create slot
+  a.btn.btn-default(ng-click="vm.prevStep()") Back
